@@ -48,7 +48,7 @@ function safeParseJSON(text) {
 }
 
 async function getStocks(req, res) {
-    const token = req.headers['authorization']?.split(':')[0];
+    const token = req.headers['authorization']?.split(' ')[1];
 
     const responce=onlyLogin(token)
     if (!responce) {
@@ -110,7 +110,7 @@ async function getStocks(req, res) {
 }
 
 async function getSuggestion(req, res) {
-    const token = req.headers['authorization']?.split(':')[0];
+    const token = req.headers['authorization']?.split(' ')[1];
 
     const responce=onlyLogin(token)
     if (!responce) {

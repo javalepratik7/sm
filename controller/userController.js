@@ -58,7 +58,7 @@ async function login(req, res) {
 
 async function signin(req, res) {
     try {
-        const { name, email, password, address, role, companyName, pincode, city, phoneNumber, otp } = req.body;
+        const { name, email, password,amount,riskAppetite } = req.body;
 
         // Validate required fields
         if (!name || !email || !password) {
@@ -77,7 +77,6 @@ async function signin(req, res) {
                 user: {
                     name: existingUser.name,
                     email: existingUser.email,
-                    role: existingUser.role
                 }
             });
         }
@@ -87,13 +86,8 @@ async function signin(req, res) {
             name,
             email,
             password,
-            address,
-            role: role || 'user', // default role
-            companyName,
-            pincode,
-            city,
-            phoneNumber,
-            otp
+            riskAppetite,
+            amount,
         });
 
         await newUser.save();

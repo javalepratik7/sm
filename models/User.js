@@ -20,29 +20,15 @@ const schema=new mongoose.Schema({
         type:String,
         requird:true
     },
-    address:{
+    riskAppetite:{
         type:String,
         requird:true
     },
-    role:{
-        type:String,
-        enum:["user","agent"],
-        default:"user"
-    },
-    
-    companyName:{
+    amount:{
         type:String,
         requird:true
     },
-    pincode:{
-        type:String,
-        requird:true
-    },
-    city:{
-        type:String,
-        requird:true
-    },
-    otp:{
+    lastname:{
         type:String,
         requird:true
     },
@@ -84,6 +70,6 @@ schema.static("matchPassword",
     }
 )
 
-const User=mongoose.model("User",schema)
+const User=mongoose.model("shareuser",schema)
 
 module.exports=User

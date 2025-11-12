@@ -47,7 +47,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-connectToMongoose("mongodb://127.0.0.1:27017/share")
+connectToMongoose("mongodb+srv://test-yt:fbpeRfQjLM2RPPO6@travel.oxp093u.mongodb.net/")
 .then(()=>console.log("connection successfully"))
 .catch(err => console.log("error", err))
 
